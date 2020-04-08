@@ -1,1 +1,26 @@
-<p>three works!</p>
+<div style="width:400px;">
+  <div class="mb-4">
+    <small>Your quesiton was:</small>
+    <h4>{{ appValues.question }}</h4>
+  </div>
+
+  <div class="mb-4">
+    <small>Your answer is:</small>
+    <h4 class="text-success">
+      {{ appValues.answer }}
+    </h4>
+  </div>
+
+  <div>
+    <button (click)="doItAgain()" class="btn btn-light btn-block" type="button">
+      Don't like it.
+    </button>
+    <button
+      (click)="onStartOver()"
+      class="btn btn-dark btn-block"
+      type="button"
+    >
+      Start over
+    </button>
+  </div>
+</div>

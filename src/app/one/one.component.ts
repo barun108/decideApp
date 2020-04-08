@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { AppValues } from './../app.component';
+import { AppValues, Errors } from './../app.component';
 
 @Component({
   selector: 'app-one',

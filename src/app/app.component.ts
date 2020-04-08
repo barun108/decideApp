@@ -7,18 +7,18 @@ export interface Errors {
 }
 
 export interface AppValues {
-        visiblePanel: string;
-        question: string;
-        mode: boolean;
-        answers: string[];
-        custom: string[];
-        answer: string;
+    visiblePanel: string;
+    question: string;
+    mode: boolean;
+    answers: string[];
+    custom: string[];
+    answer: string;
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
     errors: Errors = {
@@ -43,6 +43,21 @@ export class AppComponent implements OnInit {
             show: values.show,
             message: values.message
         };
+        setTimeout(() => {
+            this.errors = errorsCopy;
+        }, 3000);
+    }
+    handleReset() {
+        let appValuesCopy = this.appValues;
+        appValuesCopy = {
+            ...appValuesCopy,
+            visiblePanel: 'one',
+            question: '',
+            mode: false,
+            custom: [],
+            answer: null,
+        };
+        this.appValues = appValuesCopy;
     }
 
 
