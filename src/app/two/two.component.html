@@ -1,47 +1,46 @@
-<div style="width:400px">
-  <div class="mb-4">
-    <small>Your question was:</small>
-    <h4>{{ appValues.question }}</h4>
-  </div>
-  <div *ngIf="appValues.mode">
-    <input
-      class="form-control mb-2"
-      type="text"
-      placeholder="Add answer"
-      #custom
-    />
-    <button
-      class="btn btn-outline-secondary btn-block mb-2"
-      type="button"
-      (click)="addCustom(custom)"
-    >
-      Add
-    </button>
-    <div>
-      <span
-        *ngFor="let custom of appValues.custom"
-        class="btn btn-outline-primary btn-sm mr-2 mb-2"
-      >
-        {{ custom }}
-      </span>
-    </div>
-    <hr />
-  </div>
-  <div class="form-group">
-    <button
-      class="btn btn-outline-info btn-block"
-      type="button"
-      (click)="changeMode()"
-      *ngIf="!appValues.mode"
-    >
-      I want to add my own
-    </button>
-    <button
-      class="btn btn-outline-info btn-block"
-      type="button"
-      (click)="getResults()"
-    >
-      Make a decision
-    </button>
-  </div>
+<div class="MyGap">
+  <p class="is-medium has-text-info">Your question was:</p>
+  <p class="title is-4 has-text-danger">{{ appValues.question }}</p>
 </div>
+
+<div *ngIf="appValues.mode">
+  <input
+    class="input is-success MyGap"
+    type="text"
+    placeholder="Add answer"
+    #custom
+  />
+  <button
+    class="button is-info is-outlined is-fullwidth MyGap"
+    type="button"
+    (click)="addCustom(custom)"
+  >
+    Add
+  </button>
+  <div>
+    <span
+      *ngFor="let custom of appValues.custom"
+      class="button is-small is-info is-outlined MyGap2"
+    >
+      {{ custom }}
+    </span>
+  </div>
+  <!--<hr />-->
+</div>
+<!--<div class="form-group">-->
+<button
+  class="button is-info is-outlined is-fullwidth MyGap"
+  type="button"
+  (click)="changeMode()"
+  *ngIf="!appValues.mode"
+>
+  I want to add my own
+</button>
+<button
+  class="button is-danger is-outlined is-fullwidth MyGap"
+  type="button"
+  (click)="getResults()"
+>
+  Make a decision
+</button>
+<!--</div>-->

@@ -1,31 +1,33 @@
-<div
-  class="d-flex flex-column justify-content-center align-items-center"
-  style="height: 80vh;"
->
-  <div class="mb-4">
-    <h1>The Decide App</h1>
-  </div>
-  <div [ngSwitch]="appValues.visiblePanel">
-    <app-one
-      *ngSwitchCase="'one'"
-      [appValues]="appValues"
-      (next)="handleNext($event)"
-      (hasErrors)="handleErrors($event)"
-    ></app-one>
-    <app-two
-      *ngSwitchCase="'two'"
-      [appValues]="appValues"
-      (next)="handleNext($event)"
-      (hasErrors)="handleErrors($event)"
-    ></app-two>
-    <app-three
-      *ngSwitchCase="'three'"
-      [appValues]="appValues"
-      (next)="handleNext($event)"
-      (resetValues)="handleReset($event)"
-    ></app-three>
-    <div class="alert alert-danger" *ngIf="errors.show" role="alert">
-      {{ errors.message }}
+<div class="container is-fluid">
+  <div style="margin-top: 60px;" class="column is-centered center">
+    <!--one third column starts-->
+    <div class="column is-one-third ">
+      <p class="title is-4 has-text-link center f1">The Decide App</p>
+
+      <div [ngSwitch]="appValues.visiblePanel">
+        <app-one
+          *ngSwitchCase="'one'"
+          [appValues]="appValues"
+          (next)="handleNext($event)"
+          (hasErrors)="handleErrors($event)"
+        ></app-one>
+        <app-two
+          *ngSwitchCase="'two'"
+          [appValues]="appValues"
+          (next)="handleNext($event)"
+          (hasErrors)="handleErrors($event)"
+        ></app-two>
+        <app-three
+          *ngSwitchCase="'three'"
+          [appValues]="appValues"
+          (next)="handleNext($event)"
+          (resetValues)="handleReset($event)"
+        ></app-three>
+        <div class="has-text-danger" *ngIf="errors.show" role="alert">
+          {{ errors.message }}
+        </div>
+      </div>
     </div>
+    <!--one third column ends-->
   </div>
 </div>

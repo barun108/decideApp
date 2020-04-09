@@ -1,26 +1,24 @@
-<div style="width:400px;">
-  <div class="mb-4">
-    <small>Your quesiton was:</small>
-    <h4>{{ appValues.question }}</h4>
-  </div>
-
-  <div class="mb-4">
-    <small>Your answer is:</small>
-    <h4 class="text-success">
-      {{ appValues.answer }}
-    </h4>
-  </div>
-
-  <div>
-    <button (click)="doItAgain()" class="btn btn-light btn-block" type="button">
-      Don't like it.
-    </button>
-    <button
-      (click)="onStartOver()"
-      class="btn btn-dark btn-block"
-      type="button"
-    >
-      Start over
-    </button>
-  </div>
+<div class="MyGap">
+  <p class="is-medium has-text-info">Your question was:</p>
+  <p class="title is-4 has-text-danger">{{ appValues.question }}</p>
 </div>
+
+<div class="MyGap">
+  <p class="is-medium has-text-info">Your Answer is:</p>
+  <p class="title is-4 has-text-success">{{ appValues.answer }}</p>
+</div>
+
+<button
+  (click)="doItAgain()"
+  class="button is-warning is-light is-fullwidth MyGap"
+  type="button"
+>
+  Don't like it.
+</button>
+<button
+  (click)="onStartOver()"
+  class="button is-warning is-fullwidth MyGap"
+  type="button"
+>
+  Start over
+</button>
